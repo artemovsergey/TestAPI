@@ -1,0 +1,50 @@
+﻿@page "/"
+@page "/home"
+
+@using System.Net.Http
+@using System.Net.Http.Json
+@using Keeper.Domen.ModelsPharmacy
+
+@rendermode RenderMode.InteractiveServer
+
+
+<PageTitle>Home</PageTitle>
+
+<table class ="row">
+
+    <h3>Cписок заявок на выдачу лекарственных препаратов </h3>
+    @foreach (var item in issue)
+    {
+        <tr>
+            <td class="col-sm-12">Id: @item.Id</td>
+            <td class="col-sm-12">Id: @item.CreatedTime</td>
+            <td class="col-sm-12">Id: @item.Purpose</td>
+            <td class="col-sm-12">Id: @item.Quantity</td>
+            <td class="col-sm-12">Id: @item.Status</td>
+            <td class="col-sm-12">Id: @item.Medicines.Id</td>
+        </tr>
+    }
+
+    <button @onclick="@ListIissue">Получить</button>
+</table>
+
+@code {
+    HttpClient httpClient = new();
+    List<Issue>? issue = new();
+
+
+    // public int Id { get; set; }
+    // public DateTime CreatedTime { get; set; }
+    // public string? Purpose { get; set; }
+    // public int Quantity { get; set; }
+    // public string? Status { get; set; }
+
+    // public Medicines Medicines { get; set; }
+
+    //Cписок заявок на выдачу лекарственных препаратов для отделений
+    public async Task ListIissue()
+    {
+        issue = await httpClient.GetFromJsonAsync<List<Issue>>("http://192.168.4.2:5213/IssueRequests");
+    }
+
+}

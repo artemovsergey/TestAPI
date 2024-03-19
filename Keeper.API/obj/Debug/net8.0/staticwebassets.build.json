@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "3R7d1GQiciPJ77JwGiOeAX6DFm9RevU3PM6YQDus3wI=",
+  "Source": "Keeper.API",
+  "BasePath": "_content/Keeper.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

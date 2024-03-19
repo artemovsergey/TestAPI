@@ -1,0 +1,17 @@
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\obj\Debug\net8.0\Keeper.Services.csproj.AssemblyReference.cache
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\obj\Debug\net8.0\Keeper.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\obj\Debug\net8.0\Keeper.Services.AssemblyInfoInputs.cache
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\obj\Debug\net8.0\Keeper.Services.AssemblyInfo.cs
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\obj\Debug\net8.0\Keeper.Services.csproj.CoreCompileInputs.cache
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\bin\Debug\net8.0\Keeper.Services.deps.json
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\bin\Debug\net8.0\Keeper.Services.runtimeconfig.json
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\bin\Debug\net8.0\Keeper.Services.dll
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\bin\Debug\net8.0\Keeper.Services.pdb
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\bin\Debug\net8.0\Keeper.Domen.dll
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\bin\Debug\net8.0\Keeper.Domen.pdb
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\obj\Debug\net8.0\Keeper.S.0D90100C.Up2Date
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\obj\Debug\net8.0\Keeper.Services.dll
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\obj\Debug\net8.0\refint\Keeper.Services.dll
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\obj\Debug\net8.0\Keeper.Services.pdb
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\obj\Debug\net8.0\Keeper.Services.genruntimeconfig.cache
+C:\Users\stud\Documents\17ip213\Keeper\Keeper.Services\obj\Debug\net8.0\ref\Keeper.Services.dll

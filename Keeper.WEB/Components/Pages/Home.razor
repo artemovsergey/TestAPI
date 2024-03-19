@@ -1,0 +1,94 @@
+﻿@page "/"
+@using Keeper.Domen.Models
+@using System.Net.Http
+@using System.Net.Http.Json
+
+@rendermode RenderMode.InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<div class="row">
+    <h2 class="m-2 col-12">Поиск пользователя по ID</h2>
+    <label class="col-1 m-2 " >FindId</label>
+    <input class="col-1 m-2" type="text" @bind="@id" />
+    <button class="col-1 m-2" @onclick="@findId">Поиск</button>
+    <div class="col-12"></div>
+
+    <p class="col-2 m-2">Id: @user.Id</p>
+    <p class="col-2 m-2">Name: @user.Name</p>
+    <p class="col-2 m-2">Login: @user.Email</p>
+    <p class="col-2 m-2">Password: @user.Password</p>
+    
+</div>
+
+<h2 class="m-2">Список всех пользователей</h2>
+
+
+<table class="row">
+    @foreach (User u in users)
+    {
+        <tr class="row">
+            <td class="col-2 ">Identity:<input @bind="u.Id"/></td>
+            <td class="col-2 ">Name: <input @bind="u.Name" /></td>
+            <td class="col-2 ">Login: <input @bind="u.Email" /></td>
+            <td class="col-2 ">Password: <input @bind="u.Password" /></td>
+            <button class="col-1 text-danger mt-2 ms-2 align-self-end" @onclick="@( () => delete(u.Id))">Удалить</button>
+            <button class="mt-2 ms-2 col-1 align-self-end" @onclick="@(() => update(u))">Обновить</button>
+        </tr>
+    }
+</table>
+
+<button class="my-4 col-1" @onclick="@findAll">Поиск</button>
+
+<h2>Добавить пользователя</h2>
+
+<EditForm Model="@newUser" OnSubmit="@add">
+    <label class="col-1 text-end">Name: </label>
+    <input class="col-1" @bind="newUser.Name"></input>
+
+    <label class="col-1 text-end">Email: </label>
+    <input class="col-1" @bind="newUser.Email"></input>
+
+    <label class="col-1 text-end">Password: </label>
+    <input class="col-1" @bind="newUser.Password"></input>
+
+    <button type="submit" class="col-1">Создать</button>
+</EditForm>
+
+@code {
+    HttpClient httpClient = new HttpClient();
+
+    int id;
+    User? user = new();
+    User newUser = new();
+    List<User> users = new List<User>();
+
+    public async Task findId()
+    {
+        user = await httpClient.GetFromJsonAsync<User>($"https://192:7047/user/{id}");
+    }
+
+    public async Task findAll()
+    {
+        users = await httpClient.GetFromJsonAsync<List<User>>("https://localhost:7047/users");
+    }
+
+    public async Task delete(int userId)
+    {
+        await httpClient.DeleteAsync($"https://localhost:7047/user/delete/{userId}");
+        findAll();
+    }
+
+    public async Task add()
+    {
+        await httpClient.PostAsJsonAsync<User>("https://localhost:7047/user/add", newUser);
+        findAll();
+    }
+
+    public async Task update(User u)
+    {
+        await httpClient.PutAsJsonAsync<User>("https://localhost:7047/user/update", u);
+        findAll();
+    }
+
+}
